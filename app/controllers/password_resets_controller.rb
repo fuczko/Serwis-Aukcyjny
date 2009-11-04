@@ -2,12 +2,10 @@ class PasswordResetsController < ApplicationController
     before_filter :load_user_perishable_toke, :only => [:edit, :update]
     before_filter :require_no_user 
   def new
-    puts "bbb"
     render
   end
 
   def create
-    puts "aaa"
     @user = User.find_by_email(params[:email])
     
       if @user  
