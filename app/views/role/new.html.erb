@@ -1,0 +1,10 @@
+<% form_for :role, @role, :url => { :action => "create" } do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name%><br />
+  <br />
+  <br />
+  <%= f.submit "Create Role" %>
+<% end %>
+<%= select( nil, "id", @users.map {|u| [u.login, u.id]})%>
+<%= @users.count %>
