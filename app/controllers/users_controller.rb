@@ -21,11 +21,18 @@ class UsersController < ApplicationController
   end
  
   def edit
+    allow :admin
+    allow :owner, :of => :user
     @user = @current_user
+  end
+  
+  def index
+    @users = User.find(:all)  
   end
   
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
+    params[:user][:login] = @user.login  # zapewnienie, żeby użyszkodnik nie zmienił sobie loginu
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to account_url

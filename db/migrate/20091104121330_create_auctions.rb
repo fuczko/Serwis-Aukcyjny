@@ -6,7 +6,7 @@ class CreateAuctions < ActiveRecord::Migration
       t.datetime :start, :null => false
       t.datetime :end, :null => false
       t.text :description, :null => false
-      t.integer :page_rank, :null => false
+  #    t.integer :page_rank, :null => false
       t.timestamps
     end
     execute "ALTER TABLE auctions ADD CONSTRAINT fk_auctions_1 FOREIGN KEY (user_id) REFERENCES users"

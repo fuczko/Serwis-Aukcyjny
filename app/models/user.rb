@@ -1,12 +1,17 @@
 class User < ActiveRecord::Base
-  belongs_to :baseUser, :polymorphic => true
+  #belongs_to :baseUser, :polymorphic => true
   acts_as_authorization_subject
-  has_and_belongs_to_many :roles_users
-  has_many :roles, :through => :roles_users
+  acts_as_authorization_object
+  #has_and_belongs_to_many :roles#_users
+  has_many :role_users 
+  has_many :roles, :through => :role_users
+  validates_presence_of :login, :email
+  validates_uniqueness_of :login, :message => "Istnieje użytkownik o takiej nazwie"
+  validates_uniqueness_of :email, :message => "Istnieje użytkownik o takim e-mailu"
   
   acts_as_authentic do |c|
    #c.my_config_option = my_value
-   c.logged_in_timeout(nil)
+   c.logged_in_timeout(1)
    c.openid_required_fields = [:login, :email]
  end
  
@@ -14,5 +19,9 @@ class User < ActiveRecord::Base
     reset_perishable_token!  
     Notifier.deliver_password_reset_instructions(self)  
   end  
+ 
+  def is_admin?
+    self.roles.map {|t| t.name.downcase}.include?("admin")
+  end
  
 end

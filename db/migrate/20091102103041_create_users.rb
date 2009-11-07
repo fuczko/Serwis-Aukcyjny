@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :persistence_token,    :null => false
       t.string :single_access_token,  :null => false
       t.string :perishable_token,     :null => false
-      t.references :baseUser, :polymorphic => true
+ #     t.references :baseUser, :polymorphic => true
 
       t.integer :login_count,         :null => false, :default => 0
       t.integer :failed_login_count,  :null => false, :default => 0

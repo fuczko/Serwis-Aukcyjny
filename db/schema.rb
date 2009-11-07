@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091104130330) do
+ActiveRecord::Schema.define(:version => 20091107150618) do
 
   create_table "administrators", :force => true do |t|
     t.datetime "created_at"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20091104130330) do
     t.datetime "start",       :null => false
     t.datetime "end",         :null => false
     t.text     "description", :null => false
-    t.integer  "page_rank",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20091104130330) do
   create_table "auctions_categories", :id => false, :force => true do |t|
     t.integer  "auction_id"
     t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "buy_now_auctions", :force => true do |t|
+    t.decimal  "price",                            :null => false
+    t.integer  "numer_of_products", :default => 1, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +47,18 @@ ActiveRecord::Schema.define(:version => 20091104130330) do
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
+  create_table "regular_auctions", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "role_users", :id => false, :force => true do |t|
+    t.integer  "role_id",    :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.string   "authorizable_type"
@@ -50,13 +68,6 @@ ActiveRecord::Schema.define(:version => 20091104130330) do
   end
 
   add_index "roles", ["name", "authorizable_type", "authorizable_id"], :name => "index_roles_on_name_and_authorizable_type_and_authorizable_id", :unique => true
-
-  create_table "roles_users", :id => false, :force => true do |t|
-    t.integer  "role_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                                  :null => false
