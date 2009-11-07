@@ -1,5 +1,8 @@
 class AuctionController < ApplicationController
+  include AuctionHelper
+  
   def new
+    
   end
 
   def edit

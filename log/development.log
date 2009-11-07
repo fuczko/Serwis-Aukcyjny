@@ -7928,3 +7928,977 @@ Rendering users/index
   [4;35;1mRole Load (25.2ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
   [4;36;1mRole Load (1.6ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
 Completed in 207ms (View: 48, DB: 33) | 200 OK [http://localhost/users/index]
+  [4;35;1mSQL (1.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 17:56:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (17.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (16.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (10.6ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 3, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:05.370367', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'5zalijm87ewJ3DKuZ01e', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:05.351356', "baseUser_type" = NULL, "last_login_at" = '2009-11-04 09:10:58.475739', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:43:06.150185', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (24.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (8.1ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'logged_in') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mRole Load (2.3ms)[0m   [0;1mSELECT * FROM "roles" WHERE (name = E'logged_in' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;35;1mRole Load (8.4ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (286.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 17:56:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (4.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (26.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (3.5ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 3, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:12.315043', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'AFWraj2OwlRHX5U2erkY', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:12.287240', "baseUser_type" = NULL, "last_login_at" = '2009-11-04 09:10:58.475739', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:43:06.150185', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.8ms)
+Completed in 302ms (View: 9, DB: 53) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-11-07 17:56:16) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (10.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (3.6ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 3, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:16.568106', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'4oAjbWS6vL2uU3jJeGtv', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:16.565454', "baseUser_type" = NULL, "last_login_at" = '2009-11-04 09:10:58.475739', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:43:06.150185', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 184ms (DB: 22) | 302 Found [http://localhost/user_sessions/destroy]
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (8.9ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 17:56:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (15.3ms)
+Completed in 268ms (View: 28, DB: 11) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-07 17:56:22) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"kuba"}, "action"=>"create", "authenticity_token"=>"TY1lQgED/c8QPF4Iw5kt6a1A+eAt6S6ZMye30lA3dNs=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (20.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'kuba') LIMIT 1[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (11.0ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 3, "failed_login_count" = 1, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:23.253885', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'cbMGchyZA-uhASdr9Gsa', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:16.565454', "baseUser_type" = NULL, "last_login_at" = '2009-11-04 09:10:58.475739', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:43:06.150185', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 621ms (View: 43, DB: 42) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-07 17:56:28) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"kuba"}, "action"=>"create", "authenticity_token"=>"TY1lQgED/c8QPF4Iw5kt6a1A+eAt6S6ZMye30lA3dNs=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (5.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'kuba') LIMIT 1[0m
+  [4;35;1mSQL (18.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (4.0ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:29.111059', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'9sdZrSF0qc4aMae-IL6s', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:29.089603', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (13.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 406ms (DB: 46) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 17:56:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (17.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (55.6ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:29.903128', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'kh3cd7Kl9-zvGvk7FLPD', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:29.897802', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (29.2ms)
+Completed in 556ms (View: 75, DB: 83) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 17:56:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (29.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (41.4ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:56:44.119191', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'7-VN5TMEsOYUKaLF_FuC', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:56:44.115966', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (6.6ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'logged_in') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;35;1mRole Load (22.0ms)[0m   [0mSELECT * FROM "roles" WHERE (name = E'logged_in' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;36;1mRole Load (7.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (574.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (21.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-11-07 17:58:31) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (5.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (5.0ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:58:31.899118', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'fEXLLIzOpL3twapzj8TP', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:58:31.893328', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (21.4ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'logged_in') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mRole Load (3.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE (name = E'logged_in' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;35;1mRole Load (2.4ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (318.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-11-07 17:59:29) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (16.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (2.6ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:59:29.997693', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'O3Em1HZuBcoPgS0zWCNy', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:59:29.981393', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (10.4ms)
+Completed in 174ms (View: 14, DB: 35) | 200 OK [http://localhost/users/edit]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-11-07 17:59:42) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (22.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (3.4ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:59:42.729349', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'vNCnAGpOW6qHixv8EupD', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:59:42.725381', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (8.4ms)
+Completed in 203ms (View: 18, DB: 33) | 200 OK [http://localhost/users/edit]
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 17:59:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (3.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (2.1ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 16:59:47.866095', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'Q-GeqnQjLOCPauA4SWiA', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 16:59:47.843583', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (11.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mRole Load (6.1ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+  [4;36;1mRole Load (8.9ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+Completed in 302ms (View: 25, DB: 50) | 200 OK [http://localhost/users/index]
+  [4;35;1mSQL (2.7ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 17:59:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+NameError (undefined local variable or method `admin' for #<Acl9::Dsl::Generators::FilterLambda:0xb6d91154>):
+  app/controllers/users_controller.rb:8
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/dsl_base.rb:16:in `instance_eval'
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/dsl_base.rb:16:in `acl_block!'
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions.rb:60:in `access_control'
+  app/controllers/users_controller.rb:5
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (145.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 18:00:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (15.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (30.8ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:00:30.028425', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'P_M1hz2mwPv_nqG_1Gbg', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 17:00:30.025795', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (15.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (2.7ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mRole Load (1.8ms)[0m   [0;1mSELECT * FROM "roles" WHERE (name = E'admin' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;35;1mRole Load (1.7ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 18:00:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (15.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (4.2ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:00:57.667035', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'RTcgZJLPma6c0YeKZPDj', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 17:00:57.664584', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mRole Load (4.6ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+  [4;36;1mRole Load (1.8ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+Completed in 303ms (View: 21, DB: 36) | 200 OK [http://localhost/users/index]
+  [4;35;1mSQL (2.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 18:01:20) [GET]
+
+ActionController::RoutingError (No route matches "/roles/add" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:04:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Load (17.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (4.7ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:04:34.448374', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'M9cQ71YWKFXN_11ROA3y', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 17:04:34.444183', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.2ms)
+Completed in 244ms (View: 8, DB: 30) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 18:04:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (3.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (9.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (5.3ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:04:42.257401', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'bU-GVolkWcUbjTCeJd6z', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 17:04:42.245673', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (12.3ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mUser Load (7.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mRole Load (7.0ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+  [4;36;1mRole Load (1.8ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+Completed in 511ms (View: 17, DB: 62) | 200 OK [http://localhost/users/index]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-11-07 18:04:50) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (3.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (5.2ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:04:50.910004', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'bOzqBGQiPCQXcjn0DPf4', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 17:04:50.907517', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:43:06.150185', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 16:56:29.086518', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (11.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 113ms (DB: 23) | 302 Found [http://localhost/user_sessions/destroy]
+  [4;35;1mSQL (3.7ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:04:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (9.3ms)
+Completed in 80ms (View: 16, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (2.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-07 18:04:56) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"kuba2"}, "action"=>"create", "authenticity_token"=>"TY1lQgED/c8QPF4Iw5kt6a1A+eAt6S6ZMye30lA3dNs=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (4.5ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = E'kuba2') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (4.6ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:04:56.473199', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'zRDcz6MxzceLPPhYVZbw', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:04:56.469342', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 281ms (DB: 19) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (9.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:04:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Load (23.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'2') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (24.7ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:04:57.072948', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'zwJO-r4h2wkh7G0vXZmn', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:04:57.070736', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (2.0ms)
+Completed in 231ms (View: 6, DB: 60) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 18:05:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (27.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'2') LIMIT 1[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (18.0ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:05:03.760990', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'tZwvdzanm9-G8cxWXTDE', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:05:03.757247', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (6.2ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 2 ) LIMIT 1[0m
+  [4;36;1mRole Load (2.3ms)[0m   [0;1mSELECT * FROM "roles" WHERE (name = E'admin' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;35;1mRole Load (8.7ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 2 ) [0m
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (86.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:48:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'2') LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (11.0ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:48:32.868891', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'5iiS0_arfHwoiTm6ADnu', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:48:32.866413', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.3ms)
+Completed in 258ms (View: 8, DB: 29) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-11-07 18:48:35) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'2') LIMIT 1[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (4.5ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:48:35.646258', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'ENtGyFvuSS2_myX-dJdp', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:48:35.643241', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 273ms (DB: 13) | 302 Found [http://localhost/user_sessions/destroy]
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:48:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (15.6ms)
+Completed in 135ms (View: 21, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (5.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-07 18:48:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (311.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-07 18:49:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.0ms)
+Completed in 180ms (View: 24, DB: 1) | 200 OK [http://localhost/account/new]
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-07 18:49:16) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"TY1lQgED/c8QPF4Iw5kt6a1A+eAt6S6ZMye30lA3dNs=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "openid_identifier"=>"", "password"=>"[FILTERED]", "login"=>"kuba3", "email"=>"je.jajko@g.com"}}
+  [4;36;1mSQL (1.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (28.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = E'kuba3') LIMIT 1[0m
+  [4;36;1mUser Load (8.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = E'je.jajko@g.com') LIMIT 1[0m
+  [4;35;1mUser Load (4.7ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'je.jajko@g.com') LIMIT 1[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'kuba3') LIMIT 1[0m
+  [4;35;1mUser Load (13.7ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'3c85bc078b5fb611e7d28b8708f8b916945439f2571e3b9e15a1f769b2aa8919b872dbda0e175599f8b14e935db05fb7e79838c0e7af30c24762977b7af27233') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = E'OwbGG_ncCfnUujv_aiSK') LIMIT 1[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mINSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "activated", "login", "baseUser_type", "last_login_at", "surname", "email", "baseUser_id", "first_name") VALUES(E'OwbGG_ncCfnUujv_aiSK', '2009-11-07 17:49:17.430135', '2009-11-07 17:49:17.432675', E'90b494f09ae5fa4835afe02e84766fe0c7f2fe7476c3c8d5eee250446572984e6be9aee7a27e6f22eedc049f6c5d58340956dbf6292c45783d3cd13342e68860', E'M3Zd5l7r7-83vN5Ibq_k', '2009-11-07 17:49:17.432675', 0, E'127.0.0.1', NULL, E'UFp7nk5gYWFI6-s-buAU', '2009-11-07 17:49:17.429544', E'3c85bc078b5fb611e7d28b8708f8b916945439f2571e3b9e15a1f769b2aa8919b872dbda0e175599f8b14e935db05fb7e79838c0e7af30c24762977b7af27233', 1, NULL, 'f', E'kuba3', NULL, NULL, E' ', E'je.jajko@g.com', NULL, E' ') RETURNING "id"[0m
+  [4;36;1mSQL (15.5ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `has_role' for #<User:0xb6d22fc4>):
+  app/controllers/users_controller.rb:21:in `create'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (101.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-07 18:50:18) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"TY1lQgED/c8QPF4Iw5kt6a1A+eAt6S6ZMye30lA3dNs=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "openid_identifier"=>"", "password"=>"[FILTERED]", "login"=>"kuba3", "email"=>"je.jajko@g.com"}}
+  [4;35;1mUser Load (14.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3c85bc078b5fb611e7d28b8708f8b916945439f2571e3b9e15a1f769b2aa8919b872dbda0e175599f8b14e935db05fb7e79838c0e7af30c24762977b7af27233') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3c85bc078b5fb611e7d28b8708f8b916945439f2571e3b9e15a1f769b2aa8919b872dbda0e175599f8b14e935db05fb7e79838c0e7af30c24762977b7af27233') LIMIT 1[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (4.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = E'kuba3') LIMIT 1[0m
+  [4;35;1mUser Load (7.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = E'je.jajko@g.com') LIMIT 1[0m
+  [4;36;1mUser Load (2.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'je.jajko@g.com') LIMIT 1[0m
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'kuba3') LIMIT 1[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2') LIMIT 1[0m
+  [4;35;1mUser Load (3.8ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = E'-Vbz_WMjj2Qa1RAx-UlL') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3c85bc078b5fb611e7d28b8708f8b916945439f2571e3b9e15a1f769b2aa8919b872dbda0e175599f8b14e935db05fb7e79838c0e7af30c24762977b7af27233') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3c85bc078b5fb611e7d28b8708f8b916945439f2571e3b9e15a1f769b2aa8919b872dbda0e175599f8b14e935db05fb7e79838c0e7af30c24762977b7af27233') LIMIT 1[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "activated", "login", "baseUser_type", "last_login_at", "surname", "email", "baseUser_id", "first_name") VALUES(E'-Vbz_WMjj2Qa1RAx-UlL', '2009-11-07 17:50:19.102551', '2009-11-07 17:50:19.103062', E'67ab28fef85d75e4294feb75327233a74d81519525e5094cfcad52b2031d8802cf2c7fd97c3bfd0876a46b562c3c5ad4090fdd80a8104ed98d96fcbc6016aa67', E'f82YtdZKaba5DdjFKH-5', '2009-11-07 17:50:19.103062', 0, E'127.0.0.1', NULL, E'5Z48zpzjINglg9LQhG0B', '2009-11-07 17:50:19.101247', E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2', 1, NULL, 'f', E'kuba3', NULL, NULL, E' ', E'je.jajko@g.com', NULL, E' ') RETURNING "id"[0m
+  [4;35;1mSQL (9.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (2.7ms)[0m   [0;1mSELECT * FROM "roles" WHERE (name = E'owner' and authorizable_type = E'User' and authorizable_id = 4) LIMIT 1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "roles" ("name", "created_at", "authorizable_type", "updated_at", "authorizable_id") VALUES(E'owner', '2009-11-07 17:50:19.194242', E'User', '2009-11-07 17:50:19.194242', 4) RETURNING "id"[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT "roles".id FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."id" = 12) AND ("roles_users".user_id = 4 ) LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "roles_users" ("created_at", "updated_at", "role_id", "user_id") VALUES ('2009-11-07 17:50:19.194242', '2009-11-07 17:50:19.194242', 12, 4)[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/account
+Completed in 410ms (DB: 74) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (36.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-07 18:50:19) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (7.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2') LIMIT 1[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (7.1ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2', "login_count" = 1, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:50:19.781825', "created_at" = '2009-11-07 17:50:19.103062', "email" = E'je.jajko@g.com', "perishable_token" = E'qIyNxlY9EiKHkF87BrLE', "openid_identifier" = NULL, "login" = E'kuba3', "single_access_token" = E'-Vbz_WMjj2Qa1RAx-UlL', "last_request_at" = '2009-11-07 17:50:19.775521', "baseUser_type" = NULL, "last_login_at" = NULL, "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = NULL, "activated" = 'f', "password_salt" = E'5Z48zpzjINglg9LQhG0B', "current_login_at" = '2009-11-07 17:50:19.101247', "crypted_password" = E'67ab28fef85d75e4294feb75327233a74d81519525e5094cfcad52b2031d8802cf2c7fd97c3bfd0876a46b562c3c5ad4090fdd80a8104ed98d96fcbc6016aa67' WHERE "id" = 4[0m
+  [4;35;1mSQL (9.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (4.5ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 4 ) LIMIT 1[0m
+  [4;35;1mRole Load (2.1ms)[0m   [0mSELECT * FROM "roles" WHERE (name = E'admin' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;36;1mRole Load (12.4ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 4 ) [0m
+  [4;35;1mRole Load (2.1ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'owner') AND ("roles_users".user_id = 4 ) LIMIT 1[0m
+
+Acl9::AccessDenied (Acl9::AccessDenied):
+  /home/szef/.gem/ruby/1.8/gems/acl9-0.11.0/lib/acl9/controller_extensions/generators.rb:110:in `to_proc'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (230.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-07 18:51:22) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (15.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2') LIMIT 1[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (2.6ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2', "login_count" = 1, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:51:22.796997', "created_at" = '2009-11-07 17:50:19.103062', "email" = E'je.jajko@g.com', "perishable_token" = E'4hOHEkKFe2SIGHz_RrWK', "openid_identifier" = NULL, "login" = E'kuba3', "single_access_token" = E'-Vbz_WMjj2Qa1RAx-UlL', "last_request_at" = '2009-11-07 17:51:22.767538', "baseUser_type" = NULL, "last_login_at" = NULL, "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = NULL, "activated" = 'f', "password_salt" = E'5Z48zpzjINglg9LQhG0B', "current_login_at" = '2009-11-07 17:50:19.101247', "crypted_password" = E'67ab28fef85d75e4294feb75327233a74d81519525e5094cfcad52b2031d8802cf2c7fd97c3bfd0876a46b562c3c5ad4090fdd80a8104ed98d96fcbc6016aa67' WHERE "id" = 4[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (4.9ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 4 ) LIMIT 1[0m
+  [4;35;1mRole Load (1.6ms)[0m   [0mSELECT * FROM "roles" WHERE (name = E'admin' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [4;36;1mRole Load (3.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 4 ) [0m
+  [4;35;1mRole Load (2.0ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'owner') AND ("roles_users".user_id = 4 ) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 240ms (View: 2, DB: 64) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:58:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (15.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2') LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (19.1ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2', "login_count" = 1, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:58:48.788947', "created_at" = '2009-11-07 17:50:19.103062', "email" = E'je.jajko@g.com', "perishable_token" = E'8W0rFchNj3DE09jgGIB1', "openid_identifier" = NULL, "login" = E'kuba3', "single_access_token" = E'-Vbz_WMjj2Qa1RAx-UlL', "last_request_at" = '2009-11-07 17:58:48.786420', "baseUser_type" = NULL, "last_login_at" = NULL, "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = NULL, "activated" = 'f', "password_salt" = E'5Z48zpzjINglg9LQhG0B', "current_login_at" = '2009-11-07 17:50:19.101247', "crypted_password" = E'67ab28fef85d75e4294feb75327233a74d81519525e5094cfcad52b2031d8802cf2c7fd97c3bfd0876a46b562c3c5ad4090fdd80a8104ed98d96fcbc6016aa67' WHERE "id" = 4[0m
+  [4;35;1mSQL (6.4ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.5ms)
+Completed in 161ms (View: 7, DB: 43) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-11-07 18:58:51) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (4.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (9.0ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'062df82448f53cad16bf75810fa22d5db3ecf26769c6e7a7de6b886b3397a57ffa914d6ad5d5b0d4a798f90deed6d0a1bd5dbeb916ef1983490f0e9faa6ae4c2', "login_count" = 1, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 17:58:51.533789', "created_at" = '2009-11-07 17:50:19.103062', "email" = E'je.jajko@g.com', "perishable_token" = E'g_6RgaSS_YcSuBxuk_Gs', "openid_identifier" = NULL, "login" = E'kuba3', "single_access_token" = E'-Vbz_WMjj2Qa1RAx-UlL', "last_request_at" = '2009-11-07 17:58:51.531820', "baseUser_type" = NULL, "last_login_at" = NULL, "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = NULL, "activated" = 'f', "password_salt" = E'5Z48zpzjINglg9LQhG0B', "current_login_at" = '2009-11-07 17:50:19.101247', "crypted_password" = E'67ab28fef85d75e4294feb75327233a74d81519525e5094cfcad52b2031d8802cf2c7fd97c3bfd0876a46b562c3c5ad4090fdd80a8104ed98d96fcbc6016aa67' WHERE "id" = 4[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 148ms (DB: 19) | 302 Found [http://localhost/user_sessions/destroy]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:58:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (5.0ms)
+Completed in 104ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (2.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 18:59:02) [GET]
+  Parameters: {"action"=>"activate", "controller"=>"users"}
+Redirected to http://localhost:3001/
+Completed in 606ms (DB: 4) | 302 Found [http://localhost/users/activate]
+  [4;36;1mSQL (29.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:59:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (18.7ms)
+Completed in 277ms (View: 43, DB: 34) | 200 OK [http://localhost/]
+  [4;36;1mSQL (25.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 18:59:47) [GET]
+  Parameters: {"action"=>"activate", "controller"=>"users"}
+Redirected to http://localhost:3001/
+Completed in 218ms (DB: 27) | 302 Found [http://localhost/users/activate]
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 18:59:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (13.6ms)
+Completed in 274ms (View: 23, DB: 12) | 200 OK [http://localhost/]
+  [4;36;1mSQL (5.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 19:00:09) [GET]
+  Parameters: {"action"=>"activate", "id"=>"id=1&token=chuj", "controller"=>"users"}
+  [4;36;1mUser Load (6.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=id=1&token=chuj):
+  app/controllers/users_controller.rb:52:in `activate'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (210.7ms)
+Rendered rescues/_request_and_response (0.1ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (2.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 19:01:47) [GET]
+  Parameters: {"token"=>"chuj", "action"=>"activate", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (31.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://localhost:3001/
+Completed in 607ms (DB: 36) | 302 Found [http://localhost/users/activate?[id]=1&[token]=chuj]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 19:01:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (15.3ms)
+Completed in 131ms (View: 20, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (3.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-07 19:16:05) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"kuba"}, "action"=>"create", "authenticity_token"=>"TY1lQgED/c8QPF4Iw5kt6a1A+eAt6S6ZMye30lA3dNs=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (7.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'kuba') LIMIT 1[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (7.6ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:16:05.667473', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'q8L1f1NTRKqRb3EkbCZY', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:16:05.656691', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (20.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 223ms (DB: 43) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 19:16:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (4.8ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:16:06.232362', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'SmrmHljyMSwSGu2-TfiV', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:16:06.230274', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.2ms)
+Completed in 132ms (View: 10, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:16:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (40.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (23.9ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:16:13.288596', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'u-Gh-_jBTQtDT_xxB-9p', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:16:13.269551', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (18.0ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;35;1mUser Load (17.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mRole Load (6.9ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+
+ActionView::TemplateError (undefined local variable or method `request' for #<User:0xb6d175d4>) on line #26 of app/views/users/index.html.erb:
+23: 				<% user.roles.each do |role| %>
+24: 					<%= role.name %>, 
+25: 				<%end%>
+26: 				<%= user.generate_activate_url%>
+27: 			</td>
+28: 	    </tr>
+29: 		<% end %>
+
+    app/models/user.rb:24:in `generate_activate_url'
+    app/views/users/index.html.erb:26
+    app/views/users/index.html.erb:17:in `each'
+    app/views/users/index.html.erb:17
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (521.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:17:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (5.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (19.1ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:17:43.053295', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'uvTm0RKYWqfTgxj0acXI', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:17:43.050275', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (10.4ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mUser Load (4.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mRole Load (21.7ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+
+ActionView::TemplateError (undefined local variable or method `request' for #<User:0xb6cd6d54>) on line #26 of app/views/users/index.html.erb:
+23: 				<% user.roles.each do |role| %>
+24: 					<%= role.name %>, 
+25: 				<%end%>
+26: 				<%= user.generate_activate_url%>
+27: 			</td>
+28: 	    </tr>
+29: 		<% end %>
+
+    app/models/user.rb:24:in `generate_activate_url'
+    app/views/users/index.html.erb:26
+    app/views/users/index.html.erb:17:in `each'
+    app/views/users/index.html.erb:17
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (400.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:20:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (4.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (2.5ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:20:20.294967', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'KYFSoaZV78bTP3NfgSB-', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:20:20.292522', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (3.9ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mRole Load (3.6ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+
+ActionView::TemplateError (undefined method `generate_activate_url' for #<ActionView::Base:0xb6dee4f8>) on line #26 of app/views/users/index.html.erb:
+23: 				<% user.roles.each do |role| %>
+24: 					<%= role.name %>, 
+25: 				<%end%>
+26: 				<%= generate_activate_url user%>
+27: 			</td>
+28: 	    </tr>
+29: 		<% end %>
+
+    app/views/users/index.html.erb:26
+    app/views/users/index.html.erb:17:in `each'
+    app/views/users/index.html.erb:17
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (262.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:21:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (3.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (3.5ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:21:46.049064', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'DtOV5-Go-8fZFCUUeOrV', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:21:46.045836', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (4.2ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mRole Load (25.6ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+
+ActionView::TemplateError (can't convert Fixnum into String) on line #26 of app/views/users/index.html.erb:
+23: 				<% user.roles.each do |role| %>
+24: 					<%= role.name %>, 
+25: 				<%end%>
+26: 				<%= @controller.generate_activate_url user%>
+27: 			</td>
+28: 	    </tr>
+29: 		<% end %>
+
+    app/controllers/users_controller.rb:69:in `+'
+    app/controllers/users_controller.rb:69:in `generate_activate_url'
+    app/views/users/index.html.erb:26
+    app/views/users/index.html.erb:17:in `each'
+    app/views/users/index.html.erb:17
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (1035.3ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 19:22:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+SyntaxError (/home/szef/Projekt/app/controllers/users_controller.rb:69: syntax error, unexpected tUPLUS, expecting kEND
+...activate?[id]="+user.id.to_s +"&[token]=" + user.perishable_...
+                              ^):
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (192.9ms)
+Rendered rescues/_request_and_response (10.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:22:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (17.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (6.2ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:22:42.882984', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'9UTer7F_WQE1HoKNwUo3', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:22:42.880979', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (5.5ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mRole Load (2.1ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+  [4;35;1mRole Load (1.8ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+  [4;36;1mRole Load (8.9ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 4)) [0m
+Completed in 244ms (View: 34, DB: 56) | 200 OK [http://localhost/users/index]
+  [4;35;1mSQL (7.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:24:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (21.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (57.8ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:24:12.179100', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'pfpfSVYLZUlsncKvd9H_', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:24:12.175949', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (24.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (25.4ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mUser Load (31.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mRole Load (14.8ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+  [4;36;1mRole Load (19.4ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+  [4;35;1mRole Load (2.4ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 4)) [0m
+Completed in 621ms (View: 80, DB: 209) | 200 OK [http://localhost/users/index]
+  [4;36;1mSQL (17.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 19:24:39) [GET]
+  Parameters: {"token"=>"ENtGyFvuSS2_myX-dJdp", "id"=>"2"}
+
+ActionController::RoutingError (No route matches "/activate" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (9.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 19:24:46) [GET]
+  Parameters: {"token"=>"ENtGyFvuSS2_myX-dJdp", "action"=>"activate", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (4.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (12.7ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:24:46.954457', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'Y9kmcj-jwnCo6QWd8JVD', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:24:46.942526', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (75.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (22.9ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (17.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = E'kuba2' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = E'ja.zajko2@gmail.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Update (11.6ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:24:47.195185', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'_OBrQAV9T1N9eI5dvdP2', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:48:35.643241', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 't', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCOMMIT[0m
+
+ActionView::MissingTemplate (Missing template users/activate.erb in view path app/views):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 19:26:17) [GET]
+  Parameters: {"token"=>"ENtGyFvuSS2_myX-dJdp", "action"=>"activate", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (7.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (5.5ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:17.914970', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'USUPTz2GTKVGDuXaMPtj', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:17.910421', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (5.3ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3001/
+Completed in 214ms (DB: 30) | 302 Found [http://localhost/users/activate?[id]=2&[token]=ENtGyFvuSS2_myX-dJdp]
+  [4;35;1mSQL (2.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 19:26:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mUser Load (3.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (2.8ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:18.520824', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'EbRiI9-CqnaFVVtMpuKx', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:18.511140', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.1ms)
+Completed in 168ms (View: 8, DB: 20) | 200 OK [http://localhost/]
+  [4;35;1mSQL (2.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 19:26:28) [GET]
+  Parameters: {"action"=>"activate", "controller"=>"users"}
+  [4;35;1mUser Load (3.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (19.5ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:28.235993', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'XAqMJvMV6TiPE884HPLz', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:28.233179', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (5.2ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 215ms (DB: 35) | 302 Found [http://localhost/users/activate]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 19:26:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (7.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (7.7ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:28.789949', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'FN-jt-TwqqzkO06b6mYU', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:28.784717', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (2.9ms)
+Completed in 217ms (View: 8, DB: 26) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-07 19:26:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (23.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (2.6ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:34.479329', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'ot_EUvTCU-zJo54scnKs', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:34.475055', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (22.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (31.7ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;35;1mUser Load (26.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mRole Load (1.7ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 2)) [0m
+  [4;35;1mRole Load (1.6ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 4)) [0m
+  [4;36;1mRole Load (23.7ms)[0m   [0;1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE (("roles_users".user_id = 1)) [0m
+Completed in 507ms (View: 80, DB: 137) | 200 OK [http://localhost/users/index]
+  [4;35;1mSQL (2.7ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2009-11-07 19:26:48) [GET]
+  Parameters: {"token"=>"_OBrQAV9T1N9eI5dvdP2", "action"=>"activate", "id"=>"2", "controller"=>"users"}
+  [4;35;1mUser Load (6.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (7.3ms)[0m   [0mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:48.337428', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'xkD5hVexk_6BgQmBhFle', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:48.331478', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (6.7ms)[0m   [0mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles"."name" = E'admin') AND ("roles_users".user_id = 1 ) LIMIT 1[0m
+  [4;36;1mUser Load (24.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = E'kuba2' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = E'ja.zajko2@gmail.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Update (3.4ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'65144fc989f150c79a25b03912e75117284efd000d5cd710f3168bade703aa92b68c85aea9b558d14313526cdd649ae1f398a85cd0a8b4de0e952bf87a34579e', "login_count" = 4, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:48.510041', "created_at" = '2009-11-07 14:37:58.749791', "email" = E'ja.zajko2@gmail.com', "perishable_token" = E'ta2eIxTTvDTvywFKq6b7', "openid_identifier" = NULL, "login" = E'kuba2', "single_access_token" = E'oP-qa3iWwG-nspgCIV5L', "last_request_at" = '2009-11-07 17:48:35.643241', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:22:11.691743', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 't', "password_salt" = E'xEzuwvx9gYmhBQsmDf1r', "current_login_at" = '2009-11-07 17:04:56.463020', "crypted_password" = E'7d3cf74f65b328e93244c89a04d9f74b74c8c05baa66b8ed6dc5088ad695def7d2d98fdd11b50bd9818295a1e3be88168e5009f41b10a94bea31904ee3d301fa' WHERE "id" = 2[0m
+  [4;35;1mSQL (22.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed in 495ms (DB: 95) | 302 Found [http://localhost/users/activate?[id]=2&[token]=_OBrQAV9T1N9eI5dvdP2]
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-11-07 19:26:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (5.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'1') LIMIT 1[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (3.0ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = E'5307ccdb57b65b87cf07065484939361c49b1434a71548c8eac170c6f3b24715e0ce3004c19828119cb00f1532ca321bc1ccd22c23a179e6c3d4f16d5e4fbce1', "login_count" = 5, "failed_login_count" = 0, "current_login_ip" = E'127.0.0.1', "updated_at" = '2009-11-07 18:26:49.522530', "created_at" = '2009-11-03 22:44:17.940836', "email" = E'ja.zajko@gmail.com', "perishable_token" = E'8O6QB5Wn4vNnCY-3q4Gw', "openid_identifier" = NULL, "login" = E'kuba', "single_access_token" = E'jtSmMfibxAEhQ-UtCtaE', "last_request_at" = '2009-11-07 18:26:49.519268', "baseUser_type" = NULL, "last_login_at" = '2009-11-07 16:56:29.086518', "surname" = E' ', "baseUser_id" = NULL, "first_name" = E' ', "last_login_ip" = E'127.0.0.1', "activated" = 'f', "password_salt" = E'jYRVHusajmfKEnoAsZvc', "current_login_at" = '2009-11-07 18:16:05.655792', "crypted_password" = E'b0515ed29bcc58f10c77a3fa139e4620189bd5dbc4bd19aa2d4cabc577e6f0c737d4fc4dc003970af03535c1f8af3fc3df3c3c9750e868800ca45e0df5cf0ed0' WHERE "id" = 1[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering home/index
+Rendered home/_userForm (1.7ms)
+Completed in 190ms (View: 10, DB: 22) | 200 OK [http://localhost/]

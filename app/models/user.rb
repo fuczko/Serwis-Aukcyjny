@@ -14,12 +14,24 @@ class User < ActiveRecord::Base
    c.logged_in_timeout(1)
    c.openid_required_fields = [:login, :email]
  end
- 
+  
   def deliver_password_reset_instructions!  
     reset_perishable_token!  
     Notifier.deliver_password_reset_instructions(self)  
   end  
+  
+  
  
+  def activate! token
+    if(token == self.perishable_token)
+      reset_perishable_token!
+      self.activated = true
+      self.save
+    else
+      raise "Podany token jest niezgodny z tokenem użytkownika"
+    end
+  end
+  
   def is_admin?
     self.roles.map {|t| t.name.downcase}.include?("admin")
   end

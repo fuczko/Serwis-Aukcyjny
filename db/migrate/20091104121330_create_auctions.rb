@@ -6,6 +6,7 @@ class CreateAuctions < ActiveRecord::Migration
       t.datetime :start, :null => false
       t.datetime :end, :null => false
       t.text :description, :null => false
+      t.decimal :minimal_price, :default => 0
   #    t.integer :page_rank, :null => false
       t.timestamps
     end

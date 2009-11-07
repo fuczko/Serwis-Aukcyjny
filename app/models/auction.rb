@@ -6,7 +6,7 @@ class Auction < ActiveRecord::Base
   validates_presence_of :user_id, :start, :end
   validate :start_must_be_after_today
   validate :start_must_be_before_end
-  
+  validates_numericality_of :minimal_price, :greater_than_or_equal_to => 0 
    def start_must_be_before_end 
      errors.add(:s, "The start of an auction can`t be blank and it must be dated at least 1 day after end") if 
         !start.blank? and (self.start.select_year * 1000 + self.start.select_month * 10 +self.start.select_day) >= (self.end.select_year * 1000 + self.end.select_month * 10 +self.end.select_day) 
