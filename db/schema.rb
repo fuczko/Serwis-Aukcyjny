@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091107150618) do
+ActiveRecord::Schema.define(:version => 20091107164439) do
 
   create_table "administrators", :force => true do |t|
     t.datetime "created_at"
@@ -52,13 +52,6 @@ ActiveRecord::Schema.define(:version => 20091107150618) do
     t.datetime "updated_at"
   end
 
-  create_table "role_users", :id => false, :force => true do |t|
-    t.integer  "role_id",    :null => false
-    t.integer  "user_id",    :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.string   "authorizable_type"
@@ -68,6 +61,13 @@ ActiveRecord::Schema.define(:version => 20091107150618) do
   end
 
   add_index "roles", ["name", "authorizable_type", "authorizable_id"], :name => "index_roles_on_name_and_authorizable_type_and_authorizable_id", :unique => true
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer  "role_id",    :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                                  :null => false
