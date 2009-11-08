@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   #has_and_belongs_to_many :roles#_users
   has_many :roles_users 
   has_many :roles, :through => :roles_users
+  has_many :auctions
   validates_presence_of :login, :email
   validates_uniqueness_of :login, :message => "Istnieje użytkownik o takiej nazwie"
   validates_uniqueness_of :email, :message => "Istnieje użytkownik o takim e-mailu"

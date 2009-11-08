@@ -11,9 +11,13 @@
 				<td>Email</td>
 				<td>Activated</td>
 				<td>Roles</td>
+				<td>Activate url</td>
+				<td></td>
 			</tr>
-		<% @users.each do |user| %> 
-			<td><%= user.login %></td>
+			
+		<% @users.each do |user| %>
+		<tr> 
+			<td><%= user.login %> </td>
 			<td><%= user.email%></td>
 			<td><%= user.activated%></td>
 			<td>
@@ -21,7 +25,15 @@
 					<%= role.name %>, 
 				<%end%>
 			</td>
-			
+			<td><%= @controller.generate_activate_url user%></td>
+			<td>
+				<% if user.banned? %>
+					<%= link_to "Unban", {:action =>"unban", :passed_id => user.id} %>
+				<% else %>
+					<%= link_to "Ban", {:action => "ban", :passed_id => user.id} %>
+				<% end %>
+			</td>
+	    </tr>
 		<% end %>
 		</table>
 	</body>

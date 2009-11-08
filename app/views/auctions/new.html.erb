@@ -1,0 +1,21 @@
+<html>
+	<head>
+	<%= javascript_include_tag "tiny_mce/tiny_mce" %>
+		<script type="text/javascript" >
+			tinyMCE.init({
+				mode:"textareas", 
+				editor_selector : "tiny_mce"
+			});  
+		</script> 
+	</head>
+<body>
+	<h1>New auction</h1>
+	
+	<% form_for @auction, :url => '/auctions/create' do |f| %>
+		<%= f.error_messages %>
+		<%= render :partial => "form", :object => f %>
+		<%= f.submit "Create auction" %>
+		
+	<% end %>
+</body>
+</html>

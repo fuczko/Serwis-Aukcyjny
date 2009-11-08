@@ -1,0 +1,6 @@
+<h1>New auction</h1>
+<% form_for @auction, :url => "/auctions/index" do |f| %>
+	<%= f.error_messages %>
+	<%= render :partial => "form", :object => f %>
+	<%= f.submit "Create auction" %>
+<% end %>

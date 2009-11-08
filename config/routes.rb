@@ -43,6 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   #map.root :controller => "user_sessions", :action => "new"
   map.root :controller => :home, :action => "index"
   map.resource :account, :controller => "users"
+  map.resources :auctions
   map.resources :users
     map.resources :password_resets
   map.login "login", :controller => "user_sessions", :action => "new"
