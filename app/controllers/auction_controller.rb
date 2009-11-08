@@ -6,11 +6,12 @@ class AuctionController < ApplicationController
     deny :not_activated
     allow :admin
     allow anonymous, :to => [:show]
-    allow l
     allow :owner, :of => :auction, :to => [:show, :edit, :update]
   end
+  
   def new
-    
+    @auction = Auction.new
+    @auction.user = current_user
   end
 
   def edit

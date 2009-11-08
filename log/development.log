@@ -13294,3 +13294,14 @@ Rendering template within layouts/application
 Rendering users/edit
 Rendered users/_form (6.6ms)
 Completed in 428ms (View: 42, DB: 170) | 200 OK [http://localhost/users/edit]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-08 00:57:13) [GET]
+
+ActionController::RoutingError (No route matches "/auctions/new" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
